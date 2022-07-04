@@ -1,0 +1,144 @@
+.page {
+  min-height: 100vh;
+  padding: 200px 20px 50px;
+  display: flex;
+  //   align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.container {
+  max-width: 1860px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  max-height: 833px;
+}
+.advertising {
+  background: #010406;
+  border-radius: 14px;
+  width: 273px;
+  height: calc(100% - 15px);
+  flex-shrink: 0;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 73px;
+    color: #ffffff;
+    margin-bottom: 37px;
+  }
+  .box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 68px;
+    height: 100%;
+    background: url(./bgBox.png);
+    background-size: 100% 100%;
+  }
+  .video {
+    max-width: 997px;
+    width: 100%;
+    max-height: 370px;
+    background: #010406;
+    border-radius: 14px;
+    margin-bottom: 26px;
+    display: flex;
+    video {
+      width: 100%;
+      border-radius: 14px;
+    }
+  }
+  .btns {
+    max-width: 977px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .btnGroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      &:first-child {
+        align-items: flex-start;
+      }
+      &:last-child {
+        align-items: flex-end;
+      }
+    }
+  }
+  button {
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    color: #010406;
+    width: 221px;
+    height: 68px;
+    background: url(./bgBtn.png);
+    background-size: 100% 100%;
+    margin-bottom: 14px;
+  }
+  .amount {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 4px 0;
+    button {
+      width: 90px;
+      height: 60px;
+      margin-bottom: 0;
+      background: url(./btnSm.png);
+      background-size: 100% 100%;
+    }
+    span {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 40px;
+      color: #000000;
+      width: 79px;
+      margin: 0 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url(./bgAmount.png);
+      background-size: 100% 100%;
+    }
+  }
+  .againBtn,
+  .claimBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    button {
+      margin-bottom: 0;
+      width: 336px;
+      height: 73px;
+    }
+  }
+  .againBtn button {
+    width: 212px;
+  }
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
