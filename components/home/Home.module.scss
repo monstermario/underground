@@ -1,0 +1,89 @@
+.page {
+  height: 100vh;
+  background: url(./bgHome.jpg) center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 30px;
+}
+
+.homeHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 146px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 18px;
+  a {
+    position: absolute;
+    left: 58px;
+    top: 48px;
+    display: flex;
+  }
+  .border {
+    position: absolute;
+    top: 145px;
+    height: 1px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(253, 211, 15, 0) 0%,
+      #fdd30f 47.52%,
+      rgba(253, 211, 15, 0) 100%
+    );
+  }
+  @media (max-width: 900px) {
+    & > img {
+      height: 40px;
+    }
+    a {
+      left: 40px;
+      top: 58px;
+      & > img {
+        height: 46px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    justify-content: space-between;
+    padding-left: 25px;
+    a {
+      position: relative;
+      top: auto;
+      left: auto;
+      & > img {
+        height: 33px;
+      }
+    }
+    & > img {
+      height: 28px;
+    }
+  }
+}
+.btn {
+  width: 610px;
+  height: 149px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(./bgBtn.png) center center no-repeat;
+  background-size: 100% 100%;
+  font-family: "BlowBrush";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+
+  color: #ffffff;
+
+  @media (max-width: 550px) {
+    font-size: 20px;
+    height: 100px;
+  }
+}
