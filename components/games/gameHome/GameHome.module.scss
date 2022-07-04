@@ -1,0 +1,89 @@
+.page {
+  min-height: 100vh;
+  padding: 200px 60px 70px;
+  display: flex;
+  //   align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 1750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 71px;
+    color: #ffffff;
+  }
+}
+.box {
+  width: 100%;
+  background: #010406;
+  border-radius: 14px;
+  padding: 40px 70px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gameState {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 160px;
+  a {
+    background: url(./bgBtn.png);
+    background-size: 100% 100%;
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: #0a1b2f;
+    width: 303px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  a {
+    background: url(./bgBtn.png);
+    background-size: 100% 100%;
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: #0a1b2f;
+    margin-bottom: 50px;
+    width: 303px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h3 {
+    position: absolute;
+    right: calc(100% + 35px);
+    top: 35%;
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 71px;
+    color: #ffffff;
+    width: max-content;
+  }
+}
