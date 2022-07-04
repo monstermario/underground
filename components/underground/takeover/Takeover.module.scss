@@ -1,0 +1,28 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: "BlowBrush";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 73px;
+    color: #ffffff;
+    margin-bottom: 60px;
+    @media (max-width: 767px) {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 424px) {
+      font-size: 30px;
+      margin-bottom: 9px;
+    }
+  }
+
+  img {
+    max-width: 1900px;
+    width: 100%;
+  }
+}
