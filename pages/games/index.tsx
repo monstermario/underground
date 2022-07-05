@@ -14,7 +14,7 @@ export default function GamePage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Header />
+    <Header isGame />
     <GameHome />
   </div>
   );

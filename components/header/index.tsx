@@ -4,7 +4,11 @@ import { DISCORD_URL, TWITTER_URL } from '../../constant';
 import { IconDiscord, IconTwitter } from '../ui/icon';
 import styles from './Header.module.scss';
 
-export const Header: React.FC = () => {
+type PageProps = {
+  isGame?: boolean;
+}
+
+export const Header: React.FC<PageProps> = ({isGame}) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
     <div className={styles.header}>
@@ -34,7 +38,7 @@ export const Header: React.FC = () => {
           <a>
           <img src="/img/logo.png" width="85px" alt="" />
           <img
-            src="/img/title.png"
+            src={isGame ? "/img/titleGame.png" : "/img/title.png"}
             className={styles.title}
             height="60px"
             alt=""
@@ -62,7 +66,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
       <img
-        src="/img/title.png"
+        src={isGame ? "/img/titleGame.png" : "/img/title.png"}
         className={styles.mdTitle}
         height="36px"
         alt=""

@@ -14,7 +14,7 @@ export default function UndergroundPage() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <Header />
+    <Header isGame />
     <GameCup />
   </div>
   );
