@@ -30,7 +30,7 @@ const degens: TypeDegen[] = [
     priceValue: 'XX',
     priceUnit: '$UDG',
     supply: 4200,
-    hide: true,
+    hide: false,
   },
   {
     img: '/img/degen/question.svg',
@@ -41,7 +41,7 @@ const degens: TypeDegen[] = [
     priceValue: 'XX',
     priceUnit: '$UDG',
     supply: 4200,
-    hide: true,
+    hide: false,
   },
 ];
 export const Degens: React.FC = () => (

@@ -4,5 +4,6 @@ export const Takeover: React.FC = () => (
   <div className={styles.page}>
     <h1>The takeover</h1>
     <img src="/img/takeover/takeover.jpg" alt="" />
+    <img src="/img/takeover/takeover_mobile.jpg" alt="" />
   </div>
 );

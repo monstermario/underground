@@ -24,5 +24,15 @@
   img {
     max-width: 1900px;
     width: 100%;
+    &:last-child {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
   }
 }
