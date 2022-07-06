@@ -1,5 +1,5 @@
 import {
-  Keypair
+  Keypair, PublicKey
 } from "@solana/web3.js";
 import { string2Uint8Array, transferSOL } from "../../../utils/apiFunctions";
 
@@ -45,13 +45,16 @@ export default async (req: any, res: any) => {
 
   console.log(randomChoice, data.choice)
 
+  
   if (randomChoice == data.choice) {
-    await transferSOL(ownerWallet, data.publicKey, data.amount * 2)
+    await transferSOL(ownerWallet, data.publicKey, data.amount * 3 * 0.97);
+    if(process.env.NEXT_PUBLIC_TEAM_WALLET) await transferSOL(ownerWallet, new PublicKey(process.env.NEXT_PUBLIC_TEAM_WALLET), data.amount * 3 * 0.03);
     res.json({
       success: true,
       choice: randomChoice,
     });
   } else {
+    if(process.env.NEXT_PUBLIC_TEAM_WALLET) await transferSOL(ownerWallet, new PublicKey(process.env.NEXT_PUBLIC_TEAM_WALLET), data.amount * 0.03);
     res.json({
       success: false,
       choice: randomChoice,
