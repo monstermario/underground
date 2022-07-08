@@ -92,6 +92,7 @@
       flex-direction: column;
       align-items: center;
       padding: 14px 24px 19px;
+      height: 100%;
 
       h3 {
         font-family: "Poppins";
@@ -117,6 +118,9 @@
         &.username {
           height: 27px;
           color: #fdd30f;
+        }
+        &.role{
+          margin-top: auto;
         }
       }
     }

@@ -23,7 +23,7 @@ export const Team: React.FC = () => {
       name: 'TryFindMe',
       username: '@TryFindMe',
       description:
-        'Plays a lot of hide and seek, still cant find him. Experienced admin, discord support and ... NL',
+        'Plays a lot of hide and seek, still cant find him. Experienced admin, discord support and hustler. NL',
       role: 'Admin',
     },
     {
@@ -40,18 +40,18 @@ export const Team: React.FC = () => {
       username: '! CryptoGuru#2722',
       description:
         'An expert on all things crypto. A full stack dev that can code on a make-shift toaster. CA',
-      role: 'Core Dev',
+      role: 'Senior Dev',
     },
     {
       img: '/img/team/presidentpush.jpg',
       name: 'Presidentpush',
       username: '@presidentpush',
       description:
-        'A manager by day and degenerate by night, making sure UDG is pushin P. Marketer to increase our reach. AU',
+        'A manager by day and degenerate by night, making sure UDG is pushin P. AU',
       role: 'Socials manager',
     },
     {
-      img: '/img/team/default.jpg',
+      img: '/img/team/david.jpg',
       name: 'David_Ace',
       username: 'David_Ace#9904',
       description:
@@ -86,7 +86,7 @@ export const Team: React.FC = () => {
               <h3>{team.name}</h3>
               <p className={styles.username}>{team.username}</p>
               <p>{team.description}</p>
-              <p>
+              <p className={styles.role}>
                 <span>Role: </span>
                 {team.role}
               </p>
