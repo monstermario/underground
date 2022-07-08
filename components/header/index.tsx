@@ -48,7 +48,7 @@ export const Header: React.FC<PageProps> = ({isGame}) => {
         <div className={styles.links}>
           <Link href="/mint">Mint</Link>
           <span>/</span>
-          <Link href="/games">Games</Link>
+          <Link href="/games/guess-the-cup">Games</Link>
           <span>/</span>
           <Link href="/staking">Staking</Link>
           <span>/</span>
