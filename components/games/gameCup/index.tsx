@@ -13,7 +13,7 @@ export const GameCup: React.FC = () => {
   const [step, setStep] = useState<number>(0);
   const [currentPosition, setCurrentPosition] = useState<string>('LEFT');
   const [choise, setChoise] = useState<string>('');
-  const [currentPrice, setCurrentPrice] = useState<number>(0.05);
+  const [currentPrice, setCurrentPrice] = useState<number>(0.03);
   const [balance, setBalance] = useState<number>(0);
 
   const endVideo = () => {
@@ -212,18 +212,20 @@ export const GameCup: React.FC = () => {
                   </button>
                   <div className={styles.amount}>
                     <button
-                      disabled={currentPrice == 0.05}
+                      disabled={currentPrice == 0.03}
                       onClick={() => {
-                        setCurrentPrice(Number(Math.max(currentPrice - 0.05, 0.05).toFixed(2)));
+                        // setCurrentPrice(Number(Math.max(currentPrice - 0.05, 0.05).toFixed(2)));
+                        setCurrentPrice(0.03);
                       }}
                     >
                       -
                     </button>
                     <span>{currentPrice}</span>
                     <button
-                      disabled={currentPrice == 5}
+                      disabled={currentPrice == 0.05}
                       onClick={() => {
-                        setCurrentPrice(Number(Math.min(currentPrice + 0.05, 5).toFixed(2)));
+                        // setCurrentPrice(Number(Math.min(currentPrice + 0.05, 5).toFixed(2)));
+                        setCurrentPrice(0.05)
                       }}
                     >
                       +
