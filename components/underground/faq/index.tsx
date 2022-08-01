@@ -4,29 +4,24 @@ import { FaqItem, TypeFaq } from './faqItem';
 export const Faq: React.FC = () => {
   const faqs: TypeFaq[] = [
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
+      title: 'What are the benefits of holding UDG?',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique odio egestas amet diam ridiculus sed. Fermentum velit elit ac suspendisse ut sagittis, rhoncus feugiat. Rhoncus sit nisl dignissim eu nibh. Et neque nec ut aliquam.',
+        'The main benefit for holding is the ability to recieve revenue share from our gaming platform. Additionally tokens earnt through our stake2earn model will provide holders with access to exclusive merch, raffles and DAO proposals & voting.',
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
+      title: 'When is mint?',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique odio egestas amet diam ridiculus sed. Fermentum velit elit ac suspendisse ut sagittis, rhoncus feugiat. Rhoncus sit nisl dignissim eu nibh. Et neque nec ut aliquam.',
+        'Currently, there is no set date for mint, keep updated by joining our Discord or following our Twitter.',
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
+      title: 'What is the long-term goal?',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique odio egestas amet diam ridiculus sed. Fermentum velit elit ac suspendisse ut sagittis, rhoncus feugiat. Rhoncus sit nisl dignissim eu nibh. Et neque nec ut aliquam.',
+        'To create a series of revenue streams through various outlets. Firstly, with our decentralised gambling platform which will focus on using an on-chain identity layer to comply with KYC laws, sanction checks and Fraud / Anti-money laundering protection. To further this, registering for a gambling license will be our main focus.',
     },
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
+      title: 'How can I contact the team?',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique odio egestas amet diam ridiculus sed. Fermentum velit elit ac suspendisse ut sagittis, rhoncus feugiat. Rhoncus sit nisl dignissim eu nibh. Et neque nec ut aliquam.',
-    },
-    {
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tristique odio egestas amet diam ridiculus sed. Fermentum velit elit ac suspendisse ut sagittis, rhoncus feugiat. Rhoncus sit nisl dignissim eu nibh. Et neque nec ut aliquam.',
+        'Create a support ticket in our discord or DM us through twitter!',
     },
   ];
   return (
