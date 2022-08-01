@@ -26,7 +26,7 @@ export default function Page404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div style={styleSoon}>Comming Soon</div>
+      <div style={styleSoon}>Coming Soon</div>
   </div>
   );
 }
