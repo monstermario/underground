@@ -10,6 +10,7 @@ import {
   TransactionSignature,
   Blockhash,
   FeeCalculator,
+  PublicKey,
 } from "@solana/web3.js";
 
 import { WalletNotConnectedError } from "@solana/wallet-adapter-base";
@@ -471,3 +472,8 @@ async function awaitTransactionSignatureConfirmation(
 export const sleep = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+export const getShortenAddress = (pubKey: PublicKey) => {
+  const str = pubKey.toString();
+  return `${str.slice(0, 4)}...${str.slice(-4)}`
+}

@@ -1,7 +1,8 @@
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from '@solana/web3.js';
 import axios from 'axios';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { getShortenAddress } from '../../../utils';
 import styles from './GameCup.module.scss';
 
 export const GameCup: React.FC = () => {
@@ -13,6 +14,7 @@ export const GameCup: React.FC = () => {
   const [currentPosition, setCurrentPosition] = useState<string>('LEFT');
   const [choise, setChoise] = useState<string>('');
   const [currentPrice, setCurrentPrice] = useState<number>(0.05);
+  const [balance, setBalance] = useState<number>(0);
 
   const endVideo = () => {
     if (!refVideo.current) return;
@@ -141,12 +143,40 @@ export const GameCup: React.FC = () => {
       console.log(err);
     }
   }
+
+  const getBalance = async () => {
+    if (publicKey) {
+      try {
+        const val = (await connection.getBalance(publicKey))
+        setBalance(val / LAMPORTS_PER_SOL);
+      } catch (err) {
+        console.log('get balance: ', err);
+      }
+    } else {
+      console.log('no publicKey')
+    }
+  }
+  let timer: any;
+  useEffect(() => {
+    if (publicKey) {
+      timer = setInterval(getBalance, 2000);
+    }
+    return () => {
+      if(timer) clearInterval(timer);
+    }
+  }, [publicKey])
   return (
     <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.advertising}></div>
         <div className={styles.main}>
           <h1>Guess the cup</h1>
+          {publicKey &&
+            <div className={styles.wallet}>
+              <p>{getShortenAddress(publicKey)}</p>
+              <p>{balance.toFixed(2)}</p>
+            </div>
+          }
           <div className={styles.box}>
             <div className={styles.video}>
               {/* {choise === '' ? */}
@@ -244,7 +274,7 @@ export const GameCup: React.FC = () => {
             )}
           </div>
         </div>
-        <div className={styles.advertising}></div>
+        <div className={styles.advertisingRight}></div>
       </div>
     </div>
   );

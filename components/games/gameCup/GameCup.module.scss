@@ -5,6 +5,9 @@
   //   align-items: center;
   justify-content: center;
   background-size: cover;
+  @media (max-width: 767px) {
+    padding: 140px 20px 30px;
+  }
 }
 .container {
   max-width: 1860px;
@@ -13,12 +16,18 @@
   align-items: flex-end;
   max-height: 833px;
 }
-.advertising {
+.advertising, .advertisingRight {
   background: #010406;
   border-radius: 14px;
   width: 273px;
   height: calc(100% - 15px);
   flex-shrink: 0;
+  background: url(./adv_left.png);
+  background-size: cover;
+}
+.advertisingRight {
+  background: url(./adv_right.png);
+  background-size: cover;
 }
 .main {
   width: 100%;
@@ -27,6 +36,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   h1 {
     font-family: "BlowBrush";
     font-style: normal;
@@ -35,6 +45,47 @@
     line-height: 73px;
     color: #ffffff;
     margin-bottom: 37px;
+  }
+  .wallet{
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    display: flex;
+    align-items: center;
+
+    &>p{
+      position: relative;
+      background: #FDD30F;
+      border-radius: 90px;
+      color: black;
+      padding: 0px 20px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 45px;
+      margin-left: 20px;
+      &::before{
+        content: '';
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        top: -5px;
+        bottom: -5px;
+        border: 2px solid #FDD30F;
+        border-radius: 90px;
+      }
+    }
+    @media (max-width: 1599px) {
+      flex-direction: column;
+      align-items: flex-end;
+      top: -25px;
+      &>p{
+        margin: 8px 0 8px 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
   .box {
     width: 100%;
