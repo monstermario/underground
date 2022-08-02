@@ -59,3 +59,60 @@ button:disabled {
   background: url(./bgMain.jpg) top center no-repeat;
   background-size: cover;
 }
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 0px solid transparent;
+  border-radius: 2.5px;
+  filter: none;
+  transition: background-color 0.25s, filter 0.25s;
+}
+
+.hide-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: white;
+  transition: background-color 0.25s, filter 0.25s;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+body::-webkit-scrollbar-button {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border: 0px solid transparent;
+  border-radius: 2.5px;
+  filter: none;
+  transition: background-color 0.25s, filter 0.25s;
+}
+::-webkit-scrollbar-thumb:active {
+  filter: brightness(80%);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border: 0px none transparent;
+  border-radius: 2.5px;
+}
+::-webkit-scrollbar-track:hover {
+  background: transparent;
+}
+::-webkit-scrollbar-track:active {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
