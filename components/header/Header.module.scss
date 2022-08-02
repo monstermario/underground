@@ -13,6 +13,11 @@
 
   @media (max-width: 1109px) {
     top: 155px;
+    @media (orientation: landscape) {
+      top: 55px;
+      left: 10%;
+      right: 10%;
+    }
   }
 }
 .header {
@@ -30,9 +35,12 @@
     display: none;
   }
   @media (max-width: 1109px) {
-    height: 155px;
-    .mdTitle {
-      display: block;
+    height: 62px;
+    @media (orientation: portrait) {
+      height: 155px;
+      .mdTitle {
+        display: block;
+      }
     }
   }
   @media (max-width: 767px) {
@@ -92,7 +100,7 @@
       left: 0;
       right: 0;
       display: flex;
-      background: #fdd30f;
+      background: #fff;
       top: calc(50% - 2px);
 
       &:nth-child(1) {
@@ -118,6 +126,31 @@
         &:last-child {
           transform: rotate(-45deg);
           bottom: 15px;
+        }
+      }
+    }
+
+    @media (max-width: 1109px) and (orientation: landscape) {
+      width: 22px;
+      height: 14px;
+
+      span{
+        height: 2px;
+        top: calc(50% - 1px);
+      }
+      &.open {
+        span {
+          &:first-child {
+            transform: rotate(45deg);
+            top: 6px;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+            bottom: 6px;
+          }
         }
       }
     }
@@ -165,7 +198,7 @@
       margin-left: 0px;
     }
   }
-  @media (max-width: 1109px) {
+  @media (max-width: 1109px) and (orientation: portrait) {
     & > a {
       .title {
         display: none;
@@ -221,6 +254,68 @@
       .socials a {
         margin: 0 20px;
       }
+    }
+  }
+  
+  .wallet{
+    display: none;
+  }
+
+  @media (max-width: 1109px) and (orientation: landscape) {
+    &>a{
+      img{
+        height: 30px;
+      }
+      .title{
+        height: 21px;
+
+      }
+    }
+    .socials{
+      display: none;
+    }
+    .wallet {
+      display: flex;
+    }
+  }
+  .hamburgerBox{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    background: black;
+    .socials a {
+      margin: 0 20px;
+    }
+
+  }
+}
+.wallet{
+  display: flex;
+  align-items: center;
+
+  &>p{
+    position: relative;
+    background: #FDD30F;
+    border-radius: 90px;
+    color: black;
+    padding: 0px 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 23px;
+    margin-left: 15px;
+    &::before{
+      content: '';
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      top: -4px;
+      bottom: -4px;
+      border: 2px solid #FDD30F;
+      border-radius: 90px;
     }
   }
 }

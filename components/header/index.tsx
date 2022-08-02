@@ -3,13 +3,33 @@ import Link from 'next/link';
 import { DISCORD_URL, TWITTER_URL } from '../../constant';
 import { IconDiscord, IconTwitter } from '../ui/icon';
 import styles from './Header.module.scss';
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
+import { LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { getShortenAddress } from '../../utils';
 
 type PageProps = {
   isGame?: boolean;
 }
 
-export const Header: React.FC<PageProps> = ({isGame}) => {
+export const Header: React.FC<PageProps> = ({ isGame }) => {
+  const { connection } = useConnection();
+  const { publicKey } = useWallet();
+
   const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [balance, setBalance] = useState<number>(0);
+  
+  const getBalance = async () => {
+    if (publicKey) {
+      try {
+        const val = (await connection.getBalance(publicKey))
+        setBalance(val / LAMPORTS_PER_SOL);
+      } catch (err) {
+        console.log('get balance: ', err);
+      }
+    } else {
+      console.log('no publicKey')
+    }
+  }
   return (
     <div className={styles.header}>
       <div className={styles.content}>
@@ -36,7 +56,7 @@ export const Header: React.FC<PageProps> = ({isGame}) => {
         )}
         <Link href="/">
           <a>
-          <img src="/img/logo.png" width="85px" alt="" />
+          <img src="/img/logo.png" height="69px" alt="" />
           <img
             src={isGame ? "/img/titleGame.png" : "/img/title.png"}
             className={styles.title}
@@ -63,6 +83,12 @@ export const Header: React.FC<PageProps> = ({isGame}) => {
           <a href={DISCORD_URL}>
             <IconDiscord />
           </a>
+        </div>
+        <div className={styles.wallet}>
+          {!publicKey ? <p>Connect Wallet</p> :
+            <p>{getShortenAddress(publicKey)}</p>
+          }
+          <p>{balance.toFixed(2)}</p>
         </div>
       </div>
       <img

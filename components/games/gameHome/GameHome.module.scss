@@ -108,3 +108,14 @@
     width: max-content;
   }
 }
+
+@media (max-width: 1109px) and (orientation: landscape) {
+  .page, .container {
+    padding: 0;
+    height: 100vh;
+  }
+  .box {
+    padding-top: 90px;
+    height: 100vh;
+  }
+}
